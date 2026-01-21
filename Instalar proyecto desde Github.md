@@ -1,0 +1,3 @@
+- Instalar xampp
+- Instalar composer
+- 
