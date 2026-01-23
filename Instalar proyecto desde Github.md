@@ -1,3 +1,4 @@
 - Instalar xampp
 - Instalar composer
+- instalar nodejs
 - 
