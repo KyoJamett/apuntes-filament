@@ -17,7 +17,7 @@ composer create-project laravel/laravel name_project
 ![[Pasted image 20260122220759.png]]
 Guardar el archivo.
 
-- Crear un repositorio en github (ahondar más) y linkear el proyecto al repo
+- Crear un repositorio en github (ver [[Subir un proyecto a github]]) y linkear el proyecto al repo
 - Abrir el proyecto en vs code
 
 Ir al siguiente link : 
