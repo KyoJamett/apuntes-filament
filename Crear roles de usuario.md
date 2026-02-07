@@ -51,7 +51,7 @@ Si ya lo tienes creado, puedes saltar este paso
 ```
 php artisan make:filament-user
 ```
-_Escribir su nickname, correo y password por consola_
+_Ejecutar este comando, luego escribir su nickname, correo y password por consola_
 
 ### Convertir usuario en super admin
 ```
@@ -195,3 +195,34 @@ Recomendado antes de hacer pruebas como crear o editar usuarios.
 - name: recepcionistaPuerta
 - password: recepcionista
 - mail: recepcionistaPuerta@mail.com
+
+---
+## ¿Qué hacer si creo un nuevo recurso?
+
+Una vez hayas creado un nuevo recuerso, debes ejecutar el comando:
+
+```
+php artisan shield:generate --all
+```
+
+Este comando va a detectar todos los recursos, incluído el nuevo, y va a generar los permisos faltantes.
+
+### Proceso recomendado
+
+#### Crear el nuevo recurso
+```
+php artisan make:filament-resource Producto
+```
+
+#### Generar permisos
+```
+php artisan shield:generate --all
+```
+
+#### Limpiar caché
+```
+php artisan optimize:clear
+```
+
+
+#### Asignar permisos a los roles

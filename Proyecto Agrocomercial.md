@@ -8,14 +8,14 @@
 
 ### Ventas
 - Vendedores Jefe:
-- Vendedor:}
+- Vendedor:
 
 ## Roles modulo de recepcion
 
 | Roles                       | Nombre<br>Sistema | Ver<br>recep | Ingresar<br>recep | Editar<br>recep | Eliminar<br>recep |
 | --------------------------- | ----------------- | ------------ | ----------------- | --------------- | ----------------- |
 | Superuser                   | superAdmin        | x            | x                 | x               | x                 |
-| Dueño                       | admin             | x            | x                 | x               | x                 |
+| Administrador               | admin             | x            | x                 | x               | x                 |
 | Oficina<br>(secretaria)     | oficina           | x            | x                 | x               | x                 |
 | Jefe packing<br>(recepcion) | packingAdmin      | x            | x                 | x               | x                 |
 | Operador<br>proceso         | proceso           |              |                   |                 |                   |
