@@ -23,6 +23,10 @@ return new class extends Migration
             $table->time('hora')->nullable();
             $table->foreignId('tipos_ubicaciones_id')->constrained('tipos_ubicaciones')->onDelete('cascade');   	
             $table->foreignId('estados_productos_calibrados_id')->constrained('estados_productos_calibrados')->onDelete('cascade');   
+            $table->integer('x')->nullable();
+            $table->integer('y')->nullable();
+            $table->integer('z')->nullable();
+            
             $table->boolean	('estado')->nullable()->default(true);	
 	
             $table->timestamps();
