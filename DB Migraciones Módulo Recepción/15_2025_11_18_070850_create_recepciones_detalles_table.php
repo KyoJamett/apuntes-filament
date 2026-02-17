@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('fecha')->nullable();	
             $table->time('hora')->nullable();	
             $table->decimal('kilos_bruto',8,1)->nullable();	
-            $table->decimal('kilos_neto',8,1)->nullable();	
-            // donde se almacena el contenedor, recepción, bodega, camara, etc 
+            $table->decimal('kilos_neto',8,1)->nullable();
+            $table->foreignId('tipos_ubicaciones_id')->constrained('tipos_ubicaciones')->onDelete('cascade');	 
             $table->foreignId('estados_recepciones_detalles_id')->constrained('estados_recepciones_detalles')->onDelete('cascade');
 
             $table->string('estado')->nullable()->default(true);	

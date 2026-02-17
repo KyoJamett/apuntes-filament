@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();
             $table->foreignId('estados_recepciones_detalles_procesos_id')->constrained('estados_recepciones_detalles_procesos')->onDelete('cascade');   	
-            $table->string('estado')->nullable()->default(true);	
+            $table->boolean	('estado')->nullable()->default(true);	
 	
             $table->timestamps();
         });

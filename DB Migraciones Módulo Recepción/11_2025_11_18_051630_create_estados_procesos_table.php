@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estados_recepciones_detalles_procesos', function (Blueprint $table) {
+        Schema::create('estados_procesos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres_estados_recepciones_detalles_procesos');
+            $table->string('nombre');
             $table->string('descripcion')->nullable();         
             $table->boolean	('estado')->nullable()->default(true);	
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estados_recepciones_detalles_procesos');
+        Schema::dropIfExists('estados_procesos');
     }
 };

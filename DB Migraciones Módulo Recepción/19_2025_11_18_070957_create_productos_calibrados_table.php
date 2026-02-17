@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('post_procesos', function (Blueprint $table) {
+        Schema::create('productos_calibrados', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('procesos_id')->constrained()->onDelete('cascade');
@@ -21,9 +21,9 @@ return new class extends Migration
             $table->foreignId('calibres_id')->constrained()->onDelete('cascade'); 	
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();
-               	
-            $table->foreignId('estados_post_procesos_id')->constrained('estados_post_procesos')->onDelete('cascade');   
-            $table->string('estado')->nullable()->default(true);	
+            $table->foreignId('tipos_ubicaciones_id')->constrained('tipos_ubicaciones')->onDelete('cascade');   	
+            $table->foreignId('estados_productos_calibrados_id')->constrained('estados_productos_calibrados')->onDelete('cascade');   
+            $table->boolean	('estado')->nullable()->default(true);	
 	
             $table->timestamps();
         });
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post_procesos');
+        Schema::dropIfExists('productos_calibrados');
     }
 };

@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('camaras', function (Blueprint $table) {
+        Schema::create('estados_recepciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();    
-            $table->string('tamaño')->nullable();	
-            $table->integer('capacidad')->nullable();	
-            $table->boolean('confirmed')->nullable()->default(false);	
-
+            $table->string('nombre');  
+            $table->string('descripcion')->nullable();       
+            $table->boolean	('estado')->nullable()->default(true);	
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('camaras');
+        Schema::dropIfExists('estados_recepciones');
     }
 };

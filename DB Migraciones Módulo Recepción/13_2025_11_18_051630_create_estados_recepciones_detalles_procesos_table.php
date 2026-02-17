@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contenedores', function (Blueprint $table) {
+        Schema::create('estados_recepciones_detalles_procesos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();	
-            $table->decimal('tara',8,1)->nullable();	
-            $table->decimal('capacidad',8,1)->nullable();	
-            $table->string('material')->nullable();	
-            $table->string('dimesiones')->nullable();	
-            $table->string('descripcion')->nullable();	
+            $table->string('nombre');
+            $table->string('descripcion')->nullable();         
             $table->boolean	('estado')->nullable()->default(true);	
             $table->timestamps();
         });
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contenedores');
+        Schema::dropIfExists('estados_recepciones_detalles_procesos');
     }
 };

@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('estados_recepciones_detalles', function (Blueprint $table) {
             $table->id();
-            $table->string('rut')->unique();
-            $table->string('nombre');
-            $table->string('empresa')->nullable();
-            $table->string('telefono')->nullable();
-            $table->string('email')->unique();
+            $table->string('nombre');  
+            $table->string('descripcion')->nullable();       
             $table->boolean	('estado')->nullable()->default(true);	
             $table->timestamps();
         });
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personas');
+        Schema::dropIfExists('estados_recepciones_detalles');
     }
 };

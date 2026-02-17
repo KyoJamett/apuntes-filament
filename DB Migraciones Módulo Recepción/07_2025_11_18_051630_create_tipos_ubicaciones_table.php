@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estados_procesos', function (Blueprint $table) {
+        Schema::create('tipos_ubicaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_estado_proceso');         
+            $table->string('nombres');
+            $table->string('descripcion')->nullable();         
             $table->boolean	('estado')->nullable()->default(true);	
             $table->timestamps();
         });
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estados_procesos');
+        Schema::dropIfExists('tipos_ubicaciones');
     }
 };
