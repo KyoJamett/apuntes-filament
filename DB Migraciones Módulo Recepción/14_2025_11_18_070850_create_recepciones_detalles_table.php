@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('recepciones_detalles', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('productos_id')->constrained()->onDelete('cascade');	
+            $table->foreignId('variedades_id')->constrained()->onDelete('cascade');	
+            $table->foreignId('contenedores_id')->constrained()->onDelete('cascade');	
+            $table->foreignId('recepciones_id')->constrained()->onDelete('cascade');	
+            $table->date('fecha')->nullable();	
+            $table->time('hora')->nullable();	
+            $table->decimal('kilos_bruto',8,1)->nullable();	
+            $table->decimal('kilos_neto',8,1)->nullable();	
+            // donde se almacena el contenedor, recepción, bodega, camara, etc 
+            $table->foreignId('estados_recepciones_detalles_id')->constrained('estados_recepciones_detalles')->onDelete('cascade');
+
+            $table->string('estado')->nullable()->default(true);	
+
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('recepciones_detalles');
+    }
+};
