@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();
             $table->foreignId('estados_recepciones_detalles_procesos_id')->constrained('estados_recepciones_detalles_procesos')->onDelete('cascade');   	
+            
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');
             $table->boolean	('estado')->nullable()->default(true);	
 	
             $table->timestamps();

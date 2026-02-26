@@ -18,9 +18,10 @@ return new class extends Migration
             $table->time('hora')->nullable();
             $table->string('descripcion')->nullable();	
             $table->foreignId('estados_procesos_id')->constrained('estados_procesos')->onDelete('cascade'); 
-            $table->string('estado')->nullable()->default(true);	
-
-
+            
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');
+            $table->boolean	('estado')->nullable()->default(true);
+            
             $table->timestamps();
         });
     }

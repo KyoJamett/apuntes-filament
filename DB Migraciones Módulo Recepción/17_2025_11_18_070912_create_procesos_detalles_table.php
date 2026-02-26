@@ -21,6 +21,8 @@ return new class extends Migration
             $table->foreignId('productos_id')->constrained()->onDelete('cascade');	
             $table->foreignId('variedades_id')->constrained()->onDelete('cascade');	
             $table->foreignId('estados_procesos_detalles_id')->constrained('estados_procesos_detalles')->onDelete('cascade');   
+           
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');
             $table->boolean	('estado')->nullable()->default(true);	
 
 

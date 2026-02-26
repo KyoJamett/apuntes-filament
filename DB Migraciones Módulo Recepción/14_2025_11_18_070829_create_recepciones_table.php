@@ -18,8 +18,10 @@ return new class extends Migration
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();
             $table->foreignId('estados_recepciones_id')->constrained('estados_recepciones')->onDelete('cascade');	
-            $table->string('estado')->nullable()->default(true);
-
+            
+            $table->foreignId('users_id')->constrained()->onDelete('cascade');	
+            $table->boolean	('estado')->nullable()->default(true);
+            
 
             $table->timestamps();
         });
